@@ -1,225 +1,209 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vantral - Cybersikkerhet for Norske Bedrifter</title>
-  <meta name="description" content="Cybersikkerhet bygget spesielt for norske SMB-bedrifter. Kommer snart.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vantral Security Scanner - Norsk Cybersikkerhet</title>
+    <meta name="description" content="Profesjonell sårbarhetsskanner med lokal AI-analyse. Utviklet for norske bedrifter som tar databeskyttelse på alvor.">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Header -->
-<header class="header">
-  <div class="container">
-    <div class="nav">
-      <div class="logo">
-        <img src="android-chrome-512x512.png" alt="Vantral logo" style="height: 70px;">
-        <span>Vantral</span>
-      </div>
-      <a href="#kontakt" class="btn btn-primary">Bli varslet</a>
-    </div>
-  </div>
-</header>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Fremtidens svar på Cybersikkerhet</h1>
-      <p>Vi bygger fremtidens cybersikkerhetsplattform spesielt tilpasset SMB-bedrifter med automatisk sårbarhetsscanning, AI-rapporter, og phishing-simulering - alt i én løsning.</p>
-
-      <div class="hero-features">
-        <div class="feature">
-          <i class="fas fa-search"></i>
-          <span>Automatisk sårbarhetsscanning</span>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Vantral</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Hjem</a></li>
+                <li><a href="#features">Funksjoner</a></li>
+                <li><a href="#download">Last ned</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <div class="feature">
-          <i class="fas fa-brain"></i>
-          <span>AI-rapporter</span>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Profesjonell sårbarhetsscanning for norske bedrifter</h1>
+                    <p class="hero-subtitle">Automatisert sikkerheitsanalyse med lokal AI-behandling og full databeskyttelse</p>
+                    <div class="hero-features">
+                        <div class="feature-badge">
+                            <span>Lokal AI-analyse</span>
+                        </div>
+                        <div class="feature-badge">
+                            <span>Norsk utviklet</span>
+                        </div>
+                        <div class="feature-badge">
+                            <span>CLI-først</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">Last ned gratis</a>
+                        <a href="https://github.com/evengarli/vantral" class="btn btn-secondary" target="_blank">Se kildekode</a>
+                    </div>
+                </div>
+                <div class="hero-demo">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="red"></span>
+                                <span class="yellow"></span>
+                                <span class="green"></span>
+                            </div>
+                            <span class="terminal-title">Vantral Security Scanner</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">C:\></span>
+                                <span class="command">vantral.exe -d example.com</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span>🔍 Starting security scan of example.com</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span>✅ Network discovery complete</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span>✅ Vulnerability detection complete</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span>🧠 AI analysis complete</span>
+                            </div>
+                            <div class="terminal-cursor">|</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Hvorfor velge Vantral?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Lokal AI-analyse</h3>
+                        <p>AI-drevet rapportgenerering som kjører lokalt på din maskin. Ingen data sendes til skyen - full kontroll over sensitive sikkerhetsdata.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>CLI-først design</h3>
+                        <p>Bygget for tekniske brukere og DevSecOps-arbeidsflyt. Integrer sømløst i eksisterende scripts og automatiseringsverktøy.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Profesjonelle rapporter</h3>
+                        <p>Genererer strukturerte sikkerhetsvurderinger på norsk med konkrete anbefalinger og risikovurderinger.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Integrert skanning</h3>
+                        <p>Kombinerer nmap og nuclei i en sømløs arbeidsflyt. En kommando for komplett sikkerhetsanalyse.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>NIS2-kompatibel</h3>
+                        <p>Utviklet med forståelse for norske databeskyttelse-krav og regulatoriske rammeverk.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Åpen kildekode</h3>
+                        <p>Full transparens og mulighet for tilpasning. Inspiser koden, bidra til utvikling, eller tilpass til dine behov.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <div class="container">
+                <h2>Perfekt for</h2>
+                <div class="use-cases-grid">
+                    <div class="use-case">
+                        <h3>SMB-bedrifter</h3>
+                        <p>Kostnadseffektiv sikkerhetsskanning uten komplekse sky-abonnementer</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>Sikkerhetskonsulenter</h3>
+                        <p>Profesjonelle rapporter for kunder med norsk språkstøtte</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>IT-avdelinger</h3>
+                        <p>Integrer i eksisterende verktøykjede og automatiseringsscripts</p>
+                    </div>
+                    <div class="use-case">
+                        <h3>Offentlig sektor</h3>
+                        <p>Overholder krav til norsk databehandling og personvern</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download">
+            <div class="container">
+                <h2>Kom i gang i dag</h2>
+                <div class="download-container">
+                    <div class="download-info">
+                        <h3>Vantral Security Scanner v1.0.0</h3>
+                        <ul class="download-features">
+                            <li>Komplett nmap + nuclei + AI-integrasjon</li>
+                            <li>Norske sikkerhetsvurderinger</li>
+                            <li>Lokal AI-behandling (ingen sky-avhengighet)</li>
+                            <li>Windows-kompatibel executable</li>
+                            <li>Åpen kildekode på GitHub</li>
+                        </ul>
+                        <div class="system-requirements">
+                            <h4>Systemkrav:</h4>
+                            <p>Windows 10+, nmap og nuclei installert</p>
+                        </div>
+                    </div>
+                    <div class="download-actions">
+                        <a href="download.html" class="btn btn-primary btn-large">
+                            <span class="icon">⬇️</span>
+                            Last ned Vantral v1.0.0
+                        </a>
+                        <div class="download-links">
+                            <a href="https://github.com/yourusername/vantral" target="_blank">Se på GitHub</a>
+                            <a href="https://github.com/yourusername/vantral/releases" target="_blank">Alle versjoner</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vantral Security</h3>
+                    <p>Moderne sikkerhetsverktøy for den personvernbevisste æra</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Lenker</h4>
+                    <ul>
+                        <li>                        <a href="https://github.com/evengarli/vantral">GitHub</a></li>
+                        <li><a href="#download">Last ned</a></li>
+                        <li><a href="mailto:contact@yourdomain.com">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Dokumentasjon</h4>
+                    <ul>
+                        <li><a href="https://github.com/yourusername/vantral/wiki">Brukermanual</a></li>
+                        <li><a href="https://github.com/yourusername/vantral/blob/main/README.md">README</a></li>
+                        <li><a href="https://github.com/yourusername/vantral/issues">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vantral Security. Åpen kildekode under MIT-lisens.</p>
+            </div>
         </div>
-        <div class="feature">
-          <i class="fas fa-user-shield"></i>
-          <span>Phishing-simulering</span>
-        </div>
-      </div>
+    </footer>
 
-      <div class="hero-buttons">
-        <a href="#kontakt" class="btn btn-primary btn-large">
-          <i class="fas fa-bell"></i>
-          Bli varslet når vi lanserer
-        </a>
-        <a href="#info" class="btn btn-secondary btn-large">
-          <i class="fas fa-info-circle"></i>
-          Les mer
-        </a>
-      </div>
-
-      <p class="hero-note">Full Lansering Estimert Q4 2025</p>
-    </div>
-  </div>
-</section>
-
-<!-- Problem & Solution -->
-<section class="info-section" id="info">
-  <div class="container">
-    <div class="info-grid">
-      <div class="info-card">
-        <h2>Problemet</h2>
-        <p>Norske SMB-bedrifter sliter med cybersikkerhet. Eksisterende løsninger er for dyre, for kompliserte, og på engelsk. 31% av SMB-er blir rammet av cyberangrep, men bare 7% planlegger å øke sikkerhetsbudsjettet.</p>
-      </div>
-
-      <div class="info-card">
-        <h2>Vår løsning</h2>
-        <p>En komplett cybersikkerhetsplattform bygget spesielt for norske bedrifter. Vi kombinerer automatisk scanning, AI-drevet analyse, og phishing simulator i én enkel løsning som norske bedriftseiere faktisk forstår og kan bruke.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- What We're Building -->
-<section class="features-section">
-  <div class="container">
-    <h2>Hva vi bygger</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-search"></i>
-        </div>
-        <h3>Automatisk sårbarhetsscanning</h3>
-        <p>Kontinuerlig overvåking av dine nettsteder og systemer. Oppdager sårbarheter før hackere gjør det.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-brain"></i>
-        </div>
-        <h3>AI-rapporter</h3>
-        <p>Tekniske funn oversatt til forretningsspråk. Forstå risiko og handlingsplaner uten teknisk ekspertise.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-user-shield"></i>
-        </div>
-        <h3>Phishing-simulering</h3>
-        <p>Test dine ansatte mot phishing-angrep. Reduser risikoen for menneskelige feil.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Timeline -->
-<section class="timeline-section">
-  <div class="container">
-    <h2>Utviklingsplan</h2>
-    <div class="timeline">
-      <div class="timeline-item completed">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Q2 2025 - Markedsanalyse</h3>
-          <p>Grundig analyse av norsk SMB-marked og konkurranselandskap</p>
-        </div>
-      </div>
-
-      <div class="timeline-item current">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Q3 2025 - Utvikling</h3>
-          <p>Bygging av plattform og integrasjon av scanning-teknologi</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Q4 2025 - Beta lansering</h3>
-          <p>Beta testing blir lansert for testing</p>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section class="contact-section" id="kontakt">
-  <div class="container">
-    <div class="contact-content">
-      <div class="contact-info">
-        <h2>Interessert?</h2>
-        <p>Registrer deg for å få beskjed når Vantral er klar for lansering. Vi kontakter deg med mer informasjon og mulighet for tidlig tilgang.</p>
-
-        <div class="contact-details">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:contact@vantral.com">contact@vantral.com</a>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Bergen, Norge</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-form-wrapper">
-        <form class="contact-form" action="https://formspree.io/f/xldnavwe" method="POST">
-          <h3>Få beskjed når vi lanserer</h3>
-
-          <div class="form-group">
-            <label for="name">Navn *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="company">Bedrift *</label>
-            <input type="text" id="company" name="company" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">E-post *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-
-          <div class="form-group">
-            <label for="message">Kommentar (valgfri)</label>
-            <textarea id="message" name="message" rows="3"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-large">
-            <i class="fas fa-paper-plane"></i>
-            Send
-          </button>
-
-          <!-- Hidden fields for Formspree -->
-          <input type="hidden" name="_subject" value="Ny interesse for Vantral">
-          <input type="text" name="_gotcha" style="display:none">
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <i class="fas fa-shield-alt"></i>
-        <span>Vantral</span>
-      </div>
-      <p>&copy; 2025 Vantral</p>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
