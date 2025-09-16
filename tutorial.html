@@ -10,146 +10,114 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="page-header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="android-chrome-512x512.png" alt="Vantral" class="nav-logo">
+                <span class="nav-title">Vantral</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Hjem</a>
+                <a href="download.html">Last ned</a>
+                <a href="#tutorial">Tutorial</a>
+                <a href="https://github.com/evengarli/vantral" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
             <h1>Vantral Tutorial</h1>
-            <p>Komplett veiledning for å komme i gang med Vantral Security Scanner</p>
+            <p>Komplett veiledning fra installasjon til avansert bruk</p>
         </div>
+    </header>
 
-        <div class="tutorial-nav">
-            <h3>Innhold</h3>
-            <ol>
-                <li><a href="#installation">Installasjon og oppsett</a></li>
-                <li><a href="#first-scan">Din første skanning</a></li>
-                <li><a href="#understanding-output">Forstå resultatet</a></li>
-                <li><a href="#advanced-options">Avanserte alternativer</a></li>
-                <li><a href="#automation">Automatisering</a></li>
-                <li><a href="#troubleshooting">Feilsøking</a></li>
-            </ol>
-        </div>
+    <main>
+        <section id="tutorial" class="content-section">
+            <div class="container">
+                <div class="tutorial-section">
+                    <h3>1. Installasjon og oppsett</h3>
+                    
+                    <h4>Forutsetninger</h4>
+                    <p>Før du starter, må du ha følgende installert:</p>
+                    
+                    <div class="warning-box">
+                        <strong>Viktig:</strong> Vantral krever nmap og nuclei for å fungere. Disse må installeres først.
+                    </div>
+                    
+                    <h4>Installere nmap</h4>
+                    <p>Last ned fra <a href="https://nmap.org/download.html" target="_blank">nmap.org</a> og installer:</p>
+                    <div class="code-block">nmap --version</div>
+                    
+                    <h4>Installere nuclei</h4>
+                    <p>Med Go installert:</p>
+                    <div class="code-block">go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest</div>
+                    
+                    <p>Verifiser installasjon:</p>
+                    <div class="code-block">nuclei -version</div>
+                    
+                    <h4>Laste ned Vantral</h4>
+                    <p>Last ned <code>vantral.exe</code> fra <a href="download.html">nedlastingssiden</a>.</p>
+                </div>
 
-        <section id="installation" class="tutorial-section">
-            <h2>1. Installasjon og oppsett</h2>
-            
-            <h3>Forutsetninger</h3>
-            <p>Før du starter, må du ha følgende installert på systemet ditt:</p>
-            
-            <div class="warning-box">
-                <strong>Viktig:</strong> Vantral krever nmap og nuclei for å fungere. Disse må installeres først.
-            </div>
-            
-            <h4>Installere nmap</h4>
-            <p>Last ned og installer nmap fra <a href="https://nmap.org/download.html" target="_blank">https://nmap.org/download.html</a></p>
-            <p>Verifiser installasjonen:</p>
-            <div class="code-block">
-nmap --version
-<span class="comment"># Skal returnere versjonsinformasjon</span>
-            </div>
-            
-            <h4>Installere nuclei</h4>
-            <p>Hvis du har Go installert:</p>
-            <div class="code-block">
-go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
-            </div>
-            
-            <p>Eller last ned ferdig binary fra <a href="https://github.com/projectdiscovery/nuclei/releases" target="_blank">GitHub Releases</a></p>
-            
-            <p>Verifiser installasjonen:</p>
-            <div class="code-block">
-nuclei -version
-<span class="comment"># Skal returnere versjonsinformasjon</span>
-            </div>
-            
-            <h4>Laste ned Vantral</h4>
-            <p>Last ned <code>vantral.exe</code> fra <a href="index.html">hovedsiden</a> og plasser den i en mappe du kan finne igjen.</p>
-            
-            <div class="tip-box">
-                <strong>Tips:</strong> Legg vantral.exe i en mappe som er i din PATH for å kunne kjøre den fra hvor som helst.
-            </div>
-        </section>
+                <div class="tutorial-section">
+                    <h3>2. Din første skanning</h3>
+                    
+                    <h4>Grunnleggende kommando</h4>
+                    <div class="code-block">vantral.exe -d example.com</div>
+                    
+                    <p>Dette vil:</p>
+                    <ul>
+                        <li>Laste ned AI-modellen automatisk (kun første gang - ca. 5GB)</li>
+                        <li>Starte AI-engine lokalt</li>
+                        <li>Kjøre nmap port-skanning</li>
+                        <li>Kjøre nuclei sårbarhetsskanning</li>
+                        <li>Generere AI-basert sikkerhetsrapport på norsk</li>
+                    </ul>
+                    
+                    <div class="warning-box">
+                        <strong>Første kjøring:</strong> AI-modellen (5GB) lastes ned ved første bruk. Dette kan ta 10-30 minutter.
+                    </div>
+                    
+                    <h4>Uten AI-analyse</h4>
+                    <div class="code-block">vantral.exe -d example.com --no-ai</div>
+                    
+                    <h4>Rask skanning</h4>
+                    <div class="code-block">vantral.exe -d example.com --fast</div>
+                </div>
 
-        <section id="first-scan" class="tutorial-section">
-            <h2>2. Din første skanning</h2>
-            
-            <p>Nå som alt er installert, la oss kjøre din første sikkerhetsskanning.</p>
-            
-            <h3>Grunnleggende kommando</h3>
-            <div class="code-block">
-vantral.exe -d example.com
-            </div>
-            
-            <p>Dette vil:</p>
-            <ul>
-                <li>Laste ned AI-modellen automatisk (kun første gang - ca. 5GB)</li>
-                <li>Starte AI-engine lokalt</li>
-                <li>Kjøre nmap port-skanning</li>
-                <li>Kjøre nuclei sårbarhetsskanning</li>
-                <li>Generere en AI-basert sikkerhetsrapport på norsk</li>
-            </ul>
-            
-            <div class="warning-box">
-                <strong>Første kjøring:</strong> Ved første kjøring lastes AI-modellen ned (5GB). Dette kan ta 10-30 minutter avhengig av internettforbindelsen din.
-            </div>
-            
-            <h3>Alternativ uten AI</h3>
-            <p>Hvis du vil hoppe over AI-analysen:</p>
-            <div class="code-block">
-vantral.exe -d example.com --no-ai
-            </div>
-            
-            <h3>Rask skanning</h3>
-            <p>For en raskere, men mindre grundig skanning:</p>
-            <div class="code-block">
-vantral.exe -d example.com --fast
-            </div>
-        </section>
-
-        <section id="understanding-output" class="tutorial-section">
-            <h2>3. Forstå resultatet</h2>
-            
-            <p>Etter skanningen finner du resultatene i <code>scan-results</code>-mappen.</p>
-            
-            <h3>Filstruktur</h3>
-            <div class="code-block">
-scan-results/
+                <div class="tutorial-section">
+                    <h3>3. Forstå resultatet</h3>
+                    
+                    <p>Resultatene lagres i <code>scan-results</code>-mappen:</p>
+                    
+                    <div class="code-block">scan-results/
 └── example.com/
     └── 20250916-180604/
-        ├── security_report.txt  <span class="comment"># Hovedrapport med AI-analyse</span>
-        ├── nmap_scan.txt       <span class="comment"># Rå nmap-resultater</span>
-        ├── nuclei_scan.json    <span class="comment"># Rå nuclei-resultater</span>
-        └── ai_logs/            <span class="comment"># AI-engine logger</span>
-            ├── ai_stdout.log
-            └── ai_stderr.log
-            </div>
-            
-            <h3>Hovedrapport</h3>
-            <p><code>security_report.txt</code> inneholder:</p>
-            
-            <h4>AI-analyse (norsk)</h4>
-            <ul>
-                <li><strong>Kort sammendrag:</strong> Oversikt over sikkerhetsstatus</li>
-                <li><strong>Kritiske funn:</strong> Alvorlige sikkerhetsproblemer</li>
-                <li><strong>Anbefalte tiltak:</strong> Konkrete steg for å forbedre sikkerheten</li>
-                <li><strong>Risikovurdering:</strong> LAV/MIDDELS/HØY/KRITISK</li>
-            </ul>
-            
-            <h4>Tekniske detaljer</h4>
-            <ul>
-                <li><strong>Nmap-resultater:</strong> Åpne porter, tjenester, OS-fingerprinting</li>
-                <li><strong>Nuclei-resultater:</strong> Kjente sårbarheter og misconfigurations</li>
-            </ul>
-            
-            <div class="tip-box">
-                <strong>Tips:</strong> AI-analysen er optimalisert for norske brukere og refererer til relevante norske lover og standarder som NIS2-direktivet.
-            </div>
-        </section>
+        ├── security_report.txt  # Hovedrapport med AI-analyse
+        ├── nmap_scan.txt       # Rå nmap-resultater
+        ├── nuclei_scan.json    # Rå nuclei-resultater
+        └── ai_logs/            # AI-engine logger</div>
+                    
+                    <h4>Hovedrapport</h4>
+                    <p><code>security_report.txt</code> inneholder:</p>
+                    <ul>
+                        <li><strong>Kort sammendrag:</strong> Oversikt over sikkerhetsstatus</li>
+                        <li><strong>Kritiske funn:</strong> Alvorlige sikkerhetsproblemer</li>
+                        <li><strong>Anbefalte tiltak:</strong> Konkrete forbedringssteg</li>
+                        <li><strong>Risikovurdering:</strong> LAV/MIDDELS/HØY/KRITISK</li>
+                    </ul>
+                    
+                    <div class="tip-box">
+                        <strong>Tips:</strong> AI-analysen er optimalisert for norske brukere og refererer til relevante norske lover som NIS2-direktivet.
+                    </div>
+                </div>
 
-        <section id="advanced-options" class="tutorial-section">
-            <h2>4. Avanserte alternativer</h2>
-            
-            <h3>Alle kommandolinjevalg</h3>
-            <div class="code-block">
-vantral.exe -d &lt;target&gt; [OPTIONS]
+                <div class="tutorial-section">
+                    <h3>4. Avanserte alternativer</h3>
+                    
+                    <h4>Alle kommandolinjevalg</h4>
+                    <div class="code-block">vantral.exe -d &lt;target&gt; [OPTIONS]
 
 ALTERNATIVER:
   -d, --domain &lt;target&gt;    Mål-domene eller IP-adresse
@@ -158,50 +126,30 @@ ALTERNATIVER:
   -o, --output &lt;dir&gt;      Tilpasset utdata-mappe
   -v, --verbose           Detaljert utdata
   -h, --help             Vis denne hjelpen
-      --version          Vis versjon
-            </div>
-            
-            <h3>Eksempler på avansert bruk</h3>
-            
-            <h4>Skann IP-adresse med verbose output</h4>
-            <div class="code-block">
-vantral.exe -d 192.168.1.100 -v
-            </div>
-            
-            <h4>Tilpasset utdata-mappe</h4>
-            <div class="code-block">
-vantral.exe -d target.com -o ./my-security-reports
-            </div>
-            
-            <h4>Kombinere flagg</h4>
-            <div class="code-block">
-vantral.exe -d example.com --fast --no-ai -v -o ./quick-scan
-            </div>
-            
-            <h3>Målformater</h3>
-            <p>Vantral støtter følgende målformater:</p>
-            <ul>
-                <li><strong>Domener:</strong> example.com, subdomain.example.com</li>
-                <li><strong>IP-adresser:</strong> 192.168.1.1, 10.0.0.1</li>
-                <li><strong>IPv6:</strong> 2001:db8::1 (eksperimentell støtte)</li>
-            </ul>
-            
-            <div class="warning-box">
-                <strong>Subnett-skanning:</strong> Støtte for CIDR-notasjon (192.168.1.0/24) planlegges i fremtidige versjoner.
-            </div>
-        </section>
+      --version          Vis versjon</div>
+                    
+                    <h4>Eksempler på avansert bruk</h4>
+                    
+                    <p>IP-adresse med verbose output:</p>
+                    <div class="code-block">vantral.exe -d 192.168.1.100 -v</div>
+                    
+                    <p>Tilpasset utdata-mappe:</p>
+                    <div class="code-block">vantral.exe -d target.com -o ./my-security-reports</div>
+                    
+                    <p>Kombinere flagg:</p>
+                    <div class="code-block">vantral.exe -d example.com --fast --no-ai -v</div>
+                </div>
 
-        <section id="automation" class="tutorial-section">
-            <h2>5. Automatisering</h2>
-            
-            <p>Vantral kan enkelt integreres i scripts og CI/CD-pipelines.</p>
-            
-            <h3>Windows Batch Script</h3>
-            <div class="code-block">
-@echo off
+                <div class="tutorial-section">
+                    <h3>5. Automatisering</h3>
+                    
+                    <p>Vantral kan enkelt integreres i scripts og automatiseringsverktøy.</p>
+                    
+                    <h4>Windows Batch Script</h4>
+                    <div class="code-block">@echo off
 set TARGET=%1
 if "%TARGET%"=="" (
-    echo Usage: scan.bat ^&lt;target^&gt;
+    echo Usage: scan.bat &lt;target&gt;
     exit /b 1
 )
 
@@ -211,12 +159,10 @@ if %ERRORLEVEL% neq 0 (
     echo Scan failed!
     exit /b 1
 )
-echo Scan completed successfully!
-            </div>
-            
-            <h3>PowerShell Script</h3>
-            <div class="code-block">
-param(
+echo Scan completed successfully!</div>
+                    
+                    <h4>PowerShell Script</h4>
+                    <div class="code-block">param(
     [Parameter(Mandatory=$true)]
     [string]$Target,
     [switch]$Fast,
@@ -228,89 +174,64 @@ if ($Fast) { $args += "--fast" }
 if ($NoAI) { $args += "--no-ai" }
 
 Write-Host "Starting scan of $Target..." -ForegroundColor Green
-& .\vantral.exe @args
+& .\vantral.exe @args</div>
+                </div>
 
-if ($LASTEXITCODE -eq 0) {
-    Write-Host "Scan completed successfully!" -ForegroundColor Green
-} else {
-    Write-Host "Scan failed!" -ForegroundColor Red
-    exit 1
-}
-            </div>
-            
-            <h3>Scheduled Tasks</h3>
-            <p>Du kan sette opp automatiske skanninger med Windows Task Scheduler:</p>
-            
-            <div class="code-block">
-<span class="comment"># Opprett scheduled task som kjører hver søndag kl 02:00</span>
-schtasks /create /tn "Weekly Security Scan" /tr "C:\path\to\vantral.exe -d myserver.com --fast" /sc weekly /d sun /st 02:00
+                <div class="tutorial-section">
+                    <h3>6. Feilsøking</h3>
+                    
+                    <h4>Vanlige problemer</h4>
+                    
+                    <div class="warning-box">
+                        <strong>"nmap not found"</strong><br>
+                        Installer nmap og sørg for at det er i din PATH. Restart kommandolinjen etter installasjon.
+                    </div>
+                    
+                    <div class="warning-box">
+                        <strong>"nuclei not found"</strong><br>
+                        Installer nuclei eller plasser nuclei.exe i samme mappe som vantral.exe.
+                    </div>
+                    
+                    <div class="warning-box">
+                        <strong>AI-modellen laster ikke ned</strong><br>
+                        Sjekk internettforbindelsen. AI-modellen er 5GB og krever stabil forbindelse. Bruk <code>--no-ai</code> som alternativ.
+                    </div>
+                    
+                    <h4>Debugging</h4>
+                    <p>Bruk <code>-v</code> flagget for detaljert output:</p>
+                    <div class="code-block">vantral.exe -d example.com -v</div>
+                    
+                    <h4>Få hjelp</h4>
+                    <p>Hvis du fortsatt har problemer:</p>
+                    <ul>
+                        <li>Sjekk <a href="https://github.com/evengarli/vantral/issues" target="_blank">GitHub Issues</a></li>
+                        <li>Opprett ny issue med detaljert beskrivelse</li>
+                        <li>Inkluder systeminfo og error logs</li>
+                    </ul>
+                </div>
             </div>
         </section>
+    </main>
 
-        <section id="troubleshooting" class="tutorial-section">
-            <h2>6. Feilsøking</h2>
-            
-            <h3>Vanlige problemer og løsninger</h3>
-            
-            <h4>Problem: "nmap not found"</h4>
-            <div class="warning-box">
-                <strong>Løsning:</strong> Installer nmap og sørg for at det er i din PATH. Restart kommandolinjen etter installasjon.
-            </div>
-            
-            <h4>Problem: "nuclei not found"</h4>
-            <div class="warning-box">
-                <strong>Løsning:</strong> Installer nuclei eller plasser nuclei.exe i samme mappe som vantral.exe.
-            </div>
-            
-            <h4>Problem: AI-modellen laster ikke ned</h4>
-            <div class="warning-box">
-                <strong>Løsning:</strong> Sjekk internettforbindelsen din. AI-modellen er 5GB og krever stabil forbindelse. Bruk <code>--no-ai</code> som midlertidig løsning.
-            </div>
-            
-            <h4>Problem: "Permission denied" på Linux/macOS</h4>
-            <div class="warning-box">
-                <strong>Løsning:</strong> Gjør filen executable: <code>chmod +x vantral</code>
-            </div>
-            
-            <h3>Debugging</h3>
-            <p>Bruk <code>-v</code> flagget for detaljert output:</p>
-            <div class="code-block">
-vantral.exe -d example.com -v
-            </div>
-            
-            <p>AI-logger finnes i <code>scan-results/[target]/[timestamp]/ai_logs/</code>:</p>
-            <ul>
-                <li><code>ai_stdout.log</code> - Normal AI-output</li>
-                <li><code>ai_stderr.log</code> - Feilmeldinger fra AI-engine</li>
-            </ul>
-            
-            <h3>Få hjelp</h3>
-            <p>Hvis du fortsatt har problemer:</p>
-            <ul>
-                <li>Sjekk <a href="https://github.com/evengarli/vantral/issues" target="_blank">GitHub Issues</a> for kjente problemer</li>
-                <li>Opprett en ny issue med detaljert beskrivelse og error logs</li>
-                <li>Inkluder systeminfo: OS-versjon, nmap-versjon, nuclei-versjon</li>
-            </ul>
-            
-            <div class="tip-box">
-                <strong>Tips:</strong> Inkluder alltid output fra <code>vantral.exe --version</code> og <code>vantral.exe -d target.com -v</code> når du rapporterer bugs.
-            </div>
-        </section>
-
-        <footer class="footer">
+    <footer class="footer">
+        <div class="container">
             <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="android-chrome-512x512.png" alt="Vantral" class="footer-logo">
+                    <span>Vantral Security</span>
+                </div>
                 <div class="footer-links">
                     <a href="index.html">Hjem</a>
                     <a href="download.html">Last ned</a>
                     <a href="https://github.com/evengarli/vantral">GitHub</a>
                     <a href="https://github.com/evengarli/vantral/issues">Support</a>
                 </div>
-                <div class="footer-note">
-                    Oppdatert for Vantral v1.0.0
-                </div>
             </div>
-        </footer>
-    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vantral Security. Oppdatert for v1.0.0</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="app.js"></script>
 </body>
