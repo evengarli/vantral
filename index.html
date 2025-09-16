@@ -12,49 +12,90 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="android-chrome-512x512.png" alt="Vantral" class="logo">
+            <div class="logo-container">
+                <img src="android-chrome-512x512.png" alt="Vantral" class="logo">
+                <div class="logo-glow"></div>
+            </div>
             <h1>Vantral Security Scanner</h1>
             <p class="subtitle">Profesjonell sårbarhetsskanning med lokal AI-analyse</p>
         </div>
 
         <div class="features">
             <div class="feature">
+                <div class="feature-icon">🔒</div>
                 <h3>Lokal AI-analyse</h3>
                 <p>Analyse kjører lokalt på din maskin. Ingen data sendes til skyen.</p>
             </div>
             <div class="feature">
+                <div class="feature-icon">⚡</div>
                 <h3>CLI-basert</h3>
                 <p>Kommandolinje-verktøy bygget for tekniske brukere og automatisering.</p>
             </div>
             <div class="feature">
+                <div class="feature-icon">🇳🇴</div>
                 <h3>Norsk utviklet</h3>
                 <p>Bygget med forståelse for norske databeskyttelse-krav.</p>
             </div>
         </div>
 
-        <div class="download-section">
-            <h2>Kom i gang</h2>
-            <div class="download-buttons">
-                <a href="vantral.exe" class="btn btn-primary">Last ned v1.0.0</a>
-                <a href="https://github.com/evengarli/vantral" class="btn btn-secondary">Se kildekode</a>
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2>Kom i gang på 2 minutter</h2>
+                <p>Last ned, installer og start din første sikkerhetsskanning</p>
+                <div class="cta-buttons">
+                    <a href="vantral.exe" class="btn btn-primary">
+                        <span class="btn-icon">⬇</span>
+                        Last ned v1.0.0
+                    </a>
+                    <a href="tutorial.html" class="btn btn-outline">
+                        <span class="btn-icon">📖</span>
+                        Se tutorial
+                    </a>
+                </div>
+                <div class="secondary-links">
+                    <a href="https://github.com/evengarli/vantral" class="secondary-link">Se kildekode</a>
+                    <span class="divider">•</span>
+                    <a href="download.html" class="secondary-link">Alle nedlastinger</a>
+                </div>
             </div>
         </div>
 
-        <div class="usage">
-            <div class="code-example">
-                <div class="code-header">Bruk</div>
-                <div class="code">vantral.exe -d example.com</div>
+        <div class="quick-start">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                    <div class="terminal-title">Vantral Security Scanner</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="prompt">C:\></span>
+                        <span class="command">vantral.exe -d example.com</span>
+                    </div>
+                    <div class="terminal-output">
+                        <div class="output-line">🔍 Starting security scan...</div>
+                        <div class="output-line">✅ Network discovery complete</div>
+                        <div class="output-line">🧠 AI analysis complete</div>
+                    </div>
+                </div>
             </div>
-            <p class="requirements">Systemkrav: Windows 10+, nmap, nuclei</p>
+            <p class="system-req">Systemkrav: Windows 10+, nmap, nuclei</p>
         </div>
 
         <footer class="footer">
-            <div class="footer-links">
-                <a href="https://github.com/evengarli/vantral">GitHub</a>
-                <span>•</span>
-                <a href="https://github.com/evengarli/vantral/issues">Support</a>
-                <span>•</span>
-                <a href="https://github.com/evengarli/vantral/wiki">Dokumentasjon</a>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/evengarli/vantral">GitHub</a>
+                    <a href="https://github.com/evengarli/vantral/issues">Support</a>
+                    <a href="https://github.com/evengarli/vantral/wiki">Dokumentasjon</a>
+                    <a href="tutorial.html">Tutorial</a>
+                </div>
+                <div class="footer-note">
+                    Åpen kildekode under MIT-lisens
+                </div>
             </div>
         </footer>
     </div>
