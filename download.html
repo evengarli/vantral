@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last ned Vantral Security Scanner</title>
+    <meta name="description" content="Last ned Vantral Security Scanner - profesjonell sårbarhetsskanning med lokal AI-analyse.">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">Vantral</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="index.html#features">Funksjoner</a></li>
+                <li><a href="#download" class="active">Last ned</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="download-page">
+        <section class="download-hero">
+            <div class="container">
+                <h1>Last ned Vantral Security Scanner</h1>
+                <p class="subtitle">Profesjonell sårbarhetsskanning med lokal AI-analyse</p>
+            </div>
+        </section>
+
+        <section id="download" class="download-options">
+            <div class="container">
+                <div class="download-grid">
+                    <div class="download-option primary">
+                        <div class="download-header">
+                            <h2>Windows Executable</h2>
+                            <span class="version-badge">v1.0.0</span>
+                        </div>
+                        <div class="download-content">
+                            <p>Ferdig kompilert versjon for Windows. Krever kun nmap og nuclei installert på systemet.</p>
+                            <ul class="features-list">
+                                <li>Komplett funksjonalitet</li>
+                                <li>Automatisk AI-modell nedlasting</li>
+                                <li>Ingen kompilering nødvendig</li>
+                                <li>Windows 10+ kompatibel</li>
+                            </ul>
+                            <div class="download-action">
+                                <a href="#" class="btn btn-primary btn-large" id="windows-download">
+                                    Last ned for Windows
+                                    <small>vantral-v1.0.0.exe (~5MB)</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="download-option">
+                        <div class="download-header">
+                            <h2>Kildekode</h2>
+                            <span class="version-badge">v1.0.0</span>
+                        </div>
+                        <div class="download-content">
+                            <p>Kompiler selv fra kildekode. Perfekt for utviklere som vil inspisere eller tilpasse koden.</p>
+                            <ul class="features-list">
+                                <li>Full kildekode tilgang</li>
+                                <li>Mulighet for tilpasning</li>
+                                <li>Cross-platform kompatibel</li>
+                                <li>Go 1.19+ kreves</li>
+                            </ul>
+                            <div class="download-action">
+                                <a href="https://github.com/evengarli/vantral" class="btn btn-secondary btn-large" target="_blank">
+                                    Se på GitHub
+                                    <small>Åpen kildekode repository</small>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="installation">
+            <div class="container">
+                <h2>Installasjonsveiledning</h2>
+                <div class="installation-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="windows">Windows</button>
+                        <button class="tab-button" data-tab="source">Kildekode</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="windows-tab">
+                        <h3>Installasjon på Windows</h3>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Installer avhengigheter</h4>
+                                    <p>Installer nmap og nuclei på systemet ditt:</p>
+                                    <div class="code-block">
+                                        <code># Installer nmap fra https://nmap.org/download.html<br>
+# Installer nuclei:<br>
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Last ned Vantral</h4>
+                                    <p>Last ned vantral.exe og plasser den i en mappe på systemet ditt.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Kjør første skanning</h4>
+                                    <p>Åpne kommandolinje og kjør:</p>
+                                    <div class="code-block">
+                                        <code>vantral.exe -d example.com</code>
+                                    </div>
+                                    <p><small>AI-modellen lastes ned automatisk ved første kjøring (ca. 5GB).</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="source-tab">
+                        <h3>Kompilering fra kildekode</h3>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Klon repository</h4>
+                                    <div class="code-block">
+                                        <code>git clone https://github.com/yourusername/vantral.git<br>
+cd vantral</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Installer Go-avhengigheter</h4>
+                                    <div class="code-block">
+                                        <code>go mod download</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Kompiler</h4>
+                                    <div class="code-block">
+                                        <code># Windows<br>
+go build -o vantral.exe<br><br>
+# Linux/macOS<br>
+go build -o vantral</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="system-requirements">
+            <div class="container">
+                <div class="requirements-grid">
+                    <div class="requirement-card">
+                        <h3>Systemkrav</h3>
+                        <ul>
+                            <li><strong>OS:</strong> Windows 10 eller nyere</li>
+                            <li><strong>RAM:</strong> Minimum 8GB (16GB anbefalt)</li>
+                            <li><strong>Lagring:</strong> 6GB ledig plass (for AI-modell)</li>
+                            <li><strong>Nettverk:</strong> Internettilkobling for første oppsett</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-card">
+                        <h3>Påkrevde verktøy</h3>
+                        <ul>
+                            <li><strong>nmap:</strong> Portskanning og service detection</li>
+                            <li><strong>nuclei:</strong> Sårbarhetsskanning</li>
+                            <li><strong>Go 1.19+:</strong> Kun for kompilering fra kildekode</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-card">
+                        <h3>Støttede mål</h3>
+                        <ul>
+                            <li><strong>Domener:</strong> example.com, subdomain.example.com</li>
+                            <li><strong>IP-adresser:</strong> 192.168.1.1, 10.0.0.1</li>
+                            <li><strong>Subnett:</strong> 192.168.1.0/24 (planlagt)</li>
+                            <li><strong>Protokoller:</strong> HTTP, HTTPS, alle TCP-porter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="help">
+            <div class="container">
+                <h2>Trenger du hjelp?</h2>
+                <div class="help-grid">
+                    <div class="help-card">
+                        <h3>Dokumentasjon</h3>
+                        <p>Les brukermanualen på GitHub for detaljerte instruksjoner og eksempler.</p>
+                        <a href="https://github.com/evengarli/vantral/wiki" class="btn btn-outline">Les dokumentasjon</a>
+                    </div>
+                    <div class="help-card">
+                        <h3>Rapporter bugs</h3>
+                        <p>Fant du en feil? Rapporter den på GitHub Issues så vi kan fikse den raskt.</p>
+                        <a href="https://github.com/evengarli/vantral/issues" class="btn btn-outline">Rapporter bug</a>
+                    </div>
+                    <div class="help-card">
+                        <h3>Diskusjon</h3>
+                        <p>Still spørsmål, del erfaringer eller foreslå nye funksjoner.</p>
+                        <a href="https://github.com/evengarli/vantral/discussions" class="btn btn-outline">Bli med i diskusjonen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vantral Security</h3>
+                    <p>Moderne sikkerhetsverktøy for den personvernbevisste æra</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Lenker</h4>
+                    <ul>
+                        <li><a href="https://github.com/evengarli/vantral">GitHub</a></li>
+                        <li><a href="index.html">Tilbake til hjem</a></li>
+                        <li><a href="mailto:contact@yourdomain.com">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Dokumentasjon</h4>
+                    <ul>
+                        <li><a href="https://github.com/evengarli/vantral/wiki">Brukermanual</a></li>
+                        <li><a href="https://github.com/evengarli/vantral/blob/main/README.md">README</a></li>
+                        <li><a href="https://github.com/evengarli/vantral/issues">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vantral Security. Åpen kildekode under MIT-lisens.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
